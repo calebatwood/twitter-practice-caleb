@@ -1,0 +1,35 @@
+<h2>Tweets</h2>
+
+<% if @tweets %>
+<% @tweets.each do |tweet| %>
+<p> <%= tweet.text %> </p>
+<% end %>
+<% end %>
+
+<%= render 'tweets_form' %>
+
+<h2>Followers</h2>
+
+<% if @followers %>
+<% @followers.each do |follower| %>
+<p> <%= follower.screen_name %> </p>
+<% end %>
+<% end %>
+
+<%= render 'followers_form' %>
+
+<h2>Follow Somebody</h2>
+
+<%= render 'follow_somebody_form' %>
+
+<h2>New Tweet</h2>
+
+<%= render 'new_tweet_form' %>
+
+<h2> <%= link_to "Where was I mentioned?", root_path(:mentions => true)%></h2>
+
+<% if @mentions %>
+<% @mentions.each do |mention| %>
+<p> <%= mention.text %></p>
+<% end %>
+<% end %>
